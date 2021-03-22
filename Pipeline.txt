@@ -1,48 +1,48 @@
 1.Sample collection
 Materials and Reagents：inverted sterile 1 mL pipette tips
-                                           15 mL Falcon tubes
-                                           RNAlater
-                                           ice
+                        15 mL Falcon tubes
+                        RNAlater
+                        ice
 Tips:Gut microbiota were sampled by non-invasively fecal collection. Stool samples were taken in duplicate by coring out feces with inverted sterile 1 mL pipette tips. These tips were then deposited in 15 mL Falcon tubes, and RNAlater was added to the tubes for meta-transcriptomic sequencing. Samples were collected in two minutes at home and stored temporarily at −20 ℃. Samples were then transported on ice to the laboratory within 2 hours, and then stored in −80 ℃ freezers immediately.
 
 
 2. Gut microbe preparation
 Materials and Reagents：DEPC waters
-                                           15 mL Falcon tubes
-                                            Centrifugation
+                        15 mL Falcon tubes
+                        Centrifugation
 Tips:Gut microbes were released from about 5g of each fecal sample by vigorously vortexing in DEPC waters in 15 mL Falcon tubes. The supernatant was immediately collected after natural sedimentation, and followed by centrifugation at 8000g for 3 min.
 
 
 3. Genomic DNA extraction, library construction and sequencing
 Materials and Reagents：lysozyme
-                                           DNA Shearing Instrument
-                                           1.5% Agrose gel electrophoresis
-                                           Qubit 2.0 (Invitrogen)
-                                            Illumina Hiseq 2000 system
+                        DNA Shearing Instrument
+                        1.5% Agrose gel electrophoresis
+                        Qubit 2.0 (Invitrogen)
+                        Illumina Hiseq 2000 system
 Tips:Genomic DNA was extracted from gut microbe samples using a protocol which lyses bacterial cells combining lysozyme, lyticase and 1% SDS. Gut microbe samples were sheared by DNA Shearing Instrument (30W%, 3sON, 9sOFF, 25min). The size of the sheared DNAs was between 150-700 bp that was verified by 1.5% Agrose gel electrophoresis. The quantity of the sheared DNAs (after purification) was measured by Qubit 2.0 (Invitrogen). For each sample, 300ng of the fragmented genomic DNA was used for pair-end library preparation. Following end repairing and A tailing, the DNAs were ligated to the double stranded DNA adaptors. The ligated products were amplified with Polymerase Chain Reaction (PCR). After that, PCR products corresponding to 300-500 bp were purified, quantified and stored at -80 ℃ until used for sequencing. For high-throughput sequencing, the libraries were prepared following the manufacturer's instructions and applied to Illumina Hiseq 2000 system for 100 nt pair-end sequencing.
 
 
 4. PTR analysis for the growth rate of the bacterial population
 Software and Code:oriloc method
-                                 Bowtie2
-                                 lowess method
+                  Bowtie2
+                  lowess method
 Tips:In a bacterial population, every cell may be at different stage of replication. The ratio between DNA copy number near the replication origin and that near the terminus, which we term peak-to-trough ratio (PTR), should reflect the growth rate of the bacterial population. Before PTR calculation, we used the oriloc method to predict the replication origin of LcZ. We aligned meta-genomic reads to the LcZ genome and selected the uniquely aligned reads as the final alignment result. After that, we binned the coverage of genomic segments into 10kbp regions, and calculated the mean coverage (depth) in each bin. Then, we filtered the outliers that are more than 2 standard deviations from the mean. Finally, we smoothed the coverage of the resulting bins by lowess method in R software. The PTR was the smoothed sequencing coverage of the representative strain at the predicted peak location divided by that at the predicted trough location.
 
 
 5. Fecal RNA extraction and sequencing
 Materials and Reagents：Trizol Reagent (Invitrogen)
-                                            smartspec plus (BioRad) 
-                                            1.5% Agrose gel electrophoresis
-                                            Ribo-Zero rRNA depletion kit (Epicentre, MRZB12424)
-                                            gnomegen K02421-T
-                                            PCR Clean Up Kit
+                        smartspec plus (BioRad) 
+                        1.5% Agrose gel electrophoresis
+                        Ribo-Zero rRNA depletion kit (Epicentre, MRZB12424)
+                        gnomegen K02421-T
+                        PCR Clean Up Kit
 Tips:After obtaining all the samples, they were shipped to the ABLIfe Inc, Wuhan, China on dry ice, and then used to extract total RNAs. Extraction of total RNA was performed for all samples using Trizol Reagent (Invitrogen) according to the manufacturer instructions. Total RNAs were treated with RQ1 DNase (promega) to remove DNA. The quality and quantity of the purified RNA were determined by measuring the absorbance at 260 nm/280 nm (A260/A280, ~2.0) using smartspec plus (BioRad). RNA integrity was further verified by 1.5% Agrose gel electrophoresis. For each sample, 5 μg of total RNA was used for RNA-seq library preparation. Ribosomal RNAs were depleted with Ribo-Zero rRNA depletion kit (Epicentre, MRZB12424) before used for directional RNA-seq library preparation (gnomegen K02421-T). Purified mRNAs were iron fragmented at 95℃ followed by end repair and 5' adaptor ligation. Then reverse transcription was performed with RT primer harboring 3' adaptor sequence and randomized hexamer. The cDNAs were purified and PCR amplified. PCR products corresponding to 200-500 bps were purified, quantified and stored at -80 ℃ until used for sequencing.
 
 
 6. In vitro sample RNA extraction, library construction and sequencing
 Materials and Reagents：Trizol Reagent (Invitrogen)
-                                           Ribo-Zero rRNA (Epicentre, MRZB12424)
-                                           Illumina HiSeq 2500 platform
+                        Ribo-Zero rRNA (Epicentre, MRZB12424)
+                        Illumina HiSeq 2500 platform
 Tips:For the in-vitro bacterial samples, we collected the samples by two different styles. As for the first style, we cultured the LcZ on the medium and collected two replicate samples from each of the four growth stages, lag, log, stationary, and death stage, respectively. For the second, we collected samples for the same probiotic tablets as the above, and three replicates were prepared. After sample collection, total RNAs were extracted from samples mentioned above by using Trizol Reagent (Invitrogen). Then we used Ribo-Zero rRNA (Epicentre, MRZB12424) removal kit to remove the rRNAs. After that, extracted RNA was amplified using custom barcoded primers and sequenced with paired-end 100 bp reads by illumina HiSeq2500 platform (ABLIfe Inc., Wuhan).
 
 
@@ -53,18 +53,18 @@ Tips:After sequencing, raw reads would be first discarded if containing more tha
 
 8. Data validation by RT-qPCR
 Materials and Reagents：DNAse 1 (Takara) 
-                                           Transcript Aid T7 High Yield Transcription Kit (Thermo Scientific)
-                                           M-MLV reverse transcriptase(Promega)
-                                           ABI Prism 7300 Real-Time PCR System
+                        Transcript Aid T7 High Yield Transcription Kit (Thermo Scientific)
+                        M-MLV reverse transcriptase(Promega)
+                        ABI Prism 7300 Real-Time PCR System
 Tips:Genomic DNA and total RNA were extracted from fecal samples of each volunteer. For metatranscriptomic mRNA detection, total RNAs was extracted from the same fecal samples of each volunteer for sequencing. To ensure there was no genome DNA contamination, RNA was treated with DNAse 1 (Takara) for 2h, and then applied to PCR validation. The mRNA fragments of β-actin (human) obtained by in vitro Transcription (Transcript Aid T7 High Yield Transcription Kit, Thermo Scientific) was added into each RNA samples and applied to the reverse-transcribed by random hexamer primers using M-MLV reverse transcriptase (Promega). RT-qPCR was performed using ABI Prism 7300 Real-Time PCR System with standard procedure, and the relative expression level of genes were normalized by β-actin.
 
 
 9. HMP database retrieval and MetaPhlAn2 analysis
 Software and Code:MetaPhlAn2
-                                 Bowtie2
-                                 MEGAHIT
-                                 WGCNA
-                                 GraPhlAn
+                  Bowtie2
+                  MEGAHIT
+                  WGCNA
+                  GraPhlAn
 Tips:We chose HMP database (http://hmpdacc.org/) as reference to do the structural and functional analysis. First, we downloaded the complete genome sequences and annotation of human gut microbiome, which contains 358 publicly available human microbiome genomes generated from the National Institutes of Health (NIH) Human Microbiome Project and the European MetaHIT consortium. Besides, we added the LcZ genome (http://www.ncbi.nlm.nih.gov/) to the database to evaluate the influence of LcZ to the microbiome. We then aligned our metagenomic and metatranscriptomic data to the genomes with Bowtie2, allowing no more than one mismatch. To deal with cases of multiple mapping, we assumed the equal distribution of multiple mapped reads and selected no more than 10 best matches of the alignment based on the mapping quality, and then we divided the reads by its hits number, and each hit occupied one part of the reads. The MEGAHIT was used to generate assembled contigs. After that, we calculated the reads number and RPKM (Reads Per Kilobase per Million mapped reads) value for each contig and gene in the database. We then obtained the abundance of different taxonomic levels from species to kingdom by adding relative contigs abundance together. To consistently estimate the functional composition of the samples, we annotated the genes from the HMP database using COG orthologous groups and KEGG pathways by blastx program with e-value 1e-5. We ensured that comparative analysis using these procedures was not biased by data-set origin, sample preparation, sequencing technology and quality filtering.
 For meta-transcriptomic gene abundance, to study gene expression alteration changed by ingestion of LcZ, we compared the expression change between day 14 and day 0, day 28 and day 0 and day 28 and day 14. First, we got differentially expressed species (Wilcoxon rank sum test) and extracted all genes abundance from these species, and then obtained the differentially expressed genes. We then used WGCNA method to classify the differentially expressed genes as modules based on their expression pattern. After classification, we used the annotation of KEGG to obtain the functional enrichment pathways by hypergeometric test. 
 For both meta-genomic and meta-transcriptomic reads, we have applied the MetaPhlAn2 and GraPhlAn software to obtain the relative abundance of each species. Top abundant species of all samples were used to make a dendrogram heatmap via hierarchical clustering. After the calculation of species abundance, we got differentially expressed species to analyze the influence of LcZ on transcription variation.
@@ -72,21 +72,21 @@ For both meta-genomic and meta-transcriptomic reads, we have applied the MetaPhl
 
 10. In vivo and in vitro samples co-expression analysis
 Software and Code:MetaPhlAn2
-                                 R software(edgeR package)
-                                 WGCNA
+                  R software(edgeR package)
+                  WGCNA
 Tips:To find the transcriptome difference of LcZ between in-vivo and in-vitro samples, we compared the gene expression difference among these samples by aligning the transcriptome reads to the LcZ genome. We used Bowtie2 software to align reads to the LcZ genome allowing 1 seed mismatch. RPKM value for each gene was calculated for each sample. Then we compared the gene expression changes between each samples groups with each other by edgeR package. Samples in-vivo of each point was compared with samples in-vitro of each stage and type, and samples in-vivo was compared with each other, samples in-vitro was compared with each other. We then used WGCNA method to classify the differentially expressed genes as modules based on their expression pattern. After classification, we used the annotation of KEGG to obtain the functional enrichment pathways by hypergeometric test.
 
 
 11. Bacteria sRNA prediction and expression analysis
 Software and Code:window-based algorithm (ref:10.1128/mSystems.00245-19)
-                                 WGCNA
-                                 Rfam database (version 12.0)
+                  WGCNA
+                  Rfam database (version 12.0)
 Tips:To have an exact prediction of LcZ sRNAs, we developed an algorithm to detect peaks from alignment results among intragenic, intergenic (between two adjacent genes) and antisense regions. We used the RNA-seq data from four stage bacterial strain cultured on the medium. We merged the mapping result file from the same stage, and ran the computer program separately for the four stages. After prediction, we merged the sRNAs predicted from the four stages by genomic locations and got a final sRNA prediction result. We aligned the sRNA sequence to the Rfam database (version 12.0) 58 to identify homologies from related bacteria by Blast method (E-value  1e-5). After sRNA prediction, we got the normalized expression level of each sRNA for each samples. We then used WGCNA method to classify the differentially expressed sRNAs as modules based on their expression pattern. 
 
 
 12. Small RNA (sRNA) knockout experiment
 Materials and Reagents：RT-PCR
-                                           MRS medium
-                                           spectrophotometer
-                                           pH meter
+                        MRS medium
+                        spectrophotometer
+                        pH meter
 Tips:To validate the influence on bacteria by sRNAs, we selected sRNAs that expressed significantly and dynamically to do the knockout experiment. Rli28 and ratA (positive control) from the plasmid of LcZ were chosen. The target sequence of Rli28 is TTAATGCGATTAAAGCCACGGTAAAGGTACCGAAAGCCAGCATTAATTGTAAAGCGTCCGCAACGGACACTTAGGCTACTCCTTTCATTAGGATTTATGGGCTTTAGGGGTTTAACACCATAAGCACCACCTCCGATCGGAAATAGCCACCGCCTTAACTTCTCTACAAGCTTTAATTATACAGGAGCTTT, which locates on the plasmid from 30466 to 30656. The target sequence of ratA is TAATATAGACAGAAAAAGGGAAGCCCCGCTAGAACAGGACTTCCCATGCAAGCCGCTTCAAAGGCGGTGGCAGAAATTTAATAAACGATTTT, which locates on the plasmid from 28019 to 28110. The knockout experiment was performed according to one published protocol for gene deletions in Lactobacillus, and the knockout efficiency of Rli28 was validated by RT-PCR. After knockout, we tested the cell density and pH levels of the knockout bacteria with three independent replicates. For the cell growth experiments, MRS medium was used, which included peptone 10 g/L, beef extract 10 g/L, yeast extract 5 g/L, C6H5O7(NH4)3 2 g/L, Tween 80 1 ml/L, CH3COONa 5 g/L, K2HPO4 2 g/L, MgSO4 0.58 g/L, MnSO4 0.25 g/L, pH adjusted to 6.2 with HCl solution and glucose 20 g/L. The pH levels of the medium was measured by pH meter.
